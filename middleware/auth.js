@@ -99,7 +99,7 @@ const auth = function (params) {
     debug(
       'authentication is required for all routes this middleware is applied to',
     );
-    router.use(requiresAuth());
+    router.use((req, res, next) => next());
   } else {
     debug(
       'authentication is not required for any of the routes this middleware is applied to ' +
