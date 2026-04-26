@@ -99,6 +99,7 @@ const auth = function (params) {
     debug(
       'authentication is required for all routes this middleware is applied to',
     );
+    // Keep the login/callback routes reachable before enforcing route protection.
     router.use(requiresAuth());
   } else {
     debug(
